@@ -49,16 +49,9 @@ class NetworkManager: NetworkManagerProtocol {
             return .failure(APIError.invalidURL)
             
         }
-        if config.isAuthenticated {
-            switch result {
-            case .success(let token):
-                print("------Authenticating using bearer token------")
-                request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token.accessToken)"
-                
-            case .failure:
-                print("------Missing auth token------")
-                return .failure(.missingToken)
-            }
+        if config.isAuthenticated, let token = config.headers?["Authorization"] {
+            print("------Authenticating using bearer token------")
+            request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token)"
         }
         
         do {
@@ -93,16 +86,10 @@ class NetworkManager: NetworkManagerProtocol {
             return .invalidURL
         }
         
-        if config.isAuthenticated {
-            switch result {
-            case .success(let token):
-                request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token.accessToken)"
-                
-            case .failure:
-                return .missingToken
-            }
+        if config.isAuthenticated, let token = config.headers?["Authorization"] {
+            print("------Authenticating using bearer token------")
+            request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token)"
         }
-        
         do {
             let (data, response) = try await URLSession
                 .shared
@@ -129,21 +116,17 @@ class NetworkManager: NetworkManagerProtocol {
         }
         
         if config.isAuthenticated {
-            switch result {
-            case .success(let token):
-                request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token.accessToken)"
-                
-            case .failure:
-                throw APIError.missingToken
+            if config.isAuthenticated, let token = config.headers?["Authorization"] {
+                print("------Authenticating using bearer token------")
+                request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token)"
             }
-            
         }
         return try await URLSession
             .shared
             .data(for: request)
     }
     
-    private func networkErrorMessage(_ data: Data) -> String {
+    func networkErrorMessage(_ data: Data) -> String {
         do {
             let error = try JSONDecoder().decode(
                 NetworkError.self,
@@ -184,4 +167,10 @@ class NetworkManager: NetworkManagerProtocol {
         return nil
     }
     
+}
+
+extension Encodable {
+    public var jsonEncodedData: Data? {
+        try? JSONEncoder().encode(self)
+    }
 }
