@@ -112,7 +112,7 @@
 			);
 			mainGroup = C49911492C64E6BF0026A6B7;
 			packageReferences = (
-				C45E176E2C64F7F50048DC07 /* XCRemoteSwiftPackageReference "SwiftNetworking" */,
+				C45E17702C64FA190048DC07 /* XCRemoteSwiftPackageReference "SwiftNetworking" */,
 			);
 			productRefGroup = C49911532C64E6BF0026A6B7 /* Products */;
 			projectDirPath = "";
@@ -349,7 +349,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C45E176E2C64F7F50048DC07 /* XCRemoteSwiftPackageReference "SwiftNetworking" */ = {
+		C45E17702C64FA190048DC07 /* XCRemoteSwiftPackageReference "SwiftNetworking" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mrimadali/SwiftNetworking";
 			requirement = {
