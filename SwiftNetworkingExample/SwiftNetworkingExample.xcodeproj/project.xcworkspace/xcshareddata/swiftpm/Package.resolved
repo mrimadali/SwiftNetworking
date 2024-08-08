@@ -1,0 +1,15 @@
+{
+  "originHash" : "150b100b3ac03e247e9f0cf3d8eaf5bddc6599a4dbbfc111ec4e3497f0236d40",
+  "pins" : [
+    {
+      "identity" : "swiftnetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mrimadali/SwiftNetworking",
+      "state" : {
+        "branch" : "main",
+        "revision" : "681bef73d1fcfcf34947b878361909b9f1cb5454"
+      }
+    }
+  ],
+  "version" : 3
+}
