@@ -86,13 +86,11 @@ class NetworkManager: NetworkManagerProtocol {
     }
     
     func execute(_ config: any APIConfiguration) async -> APIError? {
-        
         guard let url = URL(string: config.urlPath),
               var request = getRequest(config, url: url) else {
             
-            print("URL conversion from string failed for \(config.urlPath)")
+            print("-----URL conversion from string failed for \(config.urlPath)------")
             return .invalidURL
-            
         }
         
         if config.isAuthenticated {
@@ -101,7 +99,6 @@ class NetworkManager: NetworkManagerProtocol {
                 request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token.accessToken)"
                 
             case .failure:
-                
                 return .missingToken
             }
         }
@@ -146,7 +143,7 @@ class NetworkManager: NetworkManagerProtocol {
             .data(for: request)
     }
     
-    func networkErrorMessage(_ data: Data) -> String {
+    private func networkErrorMessage(_ data: Data) -> String {
         do {
             let error = try JSONDecoder().decode(
                 NetworkError.self,

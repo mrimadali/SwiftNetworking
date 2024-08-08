@@ -111,6 +111,9 @@
 				Base,
 			);
 			mainGroup = C49911492C64E6BF0026A6B7;
+			packageReferences = (
+				C49911632C64F2130026A6B7 /* XCRemoteSwiftPackageReference "SwiftNetworking" */,
+			);
 			productRefGroup = C49911532C64E6BF0026A6B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +347,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C49911632C64F2130026A6B7 /* XCRemoteSwiftPackageReference "SwiftNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mrimadali/SwiftNetworking";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = C499114A2C64E6BF0026A6B7 /* Project object */;
 }
