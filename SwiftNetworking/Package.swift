@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "SwiftNetworking",
     platforms: [
-           .iOS(.v15),       // Minimum iOS 13.0
-           .macOS(.v13),  // Minimum macOS 10.15
+           .iOS(.v13),       // Minimum iOS 13.0
+           .macOS(.v13),     // Minimum macOS 13.0
            .watchOS(.v6),    // Minimum watchOS 6.0
            .tvOS(.v13)       // Minimum tvOS 13.0
        ],
@@ -22,7 +22,8 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "SwiftNetworking",
-            path: "Sources"),
+            path: "Sources"
+        ),
         .testTarget(
             name: "SwiftNetworkingTests",
             dependencies: ["SwiftNetworking"]),
