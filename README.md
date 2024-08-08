@@ -3,11 +3,12 @@ A lightweight, highly customizable network layer built using the latest Swift up
 
 Key Features:
 
-Generic Network Requests: Simplified API interaction with type-safe, generic methods.
-Async/Await Support: Modern Swift concurrency for cleaner, more readable code.
-Error Handling: Comprehensive error handling and custom error types.
-Customizable: Easily extendable to fit your specific networking needs.
 
+**Generic Network Requests:** Simplified API interaction with type-safe, generic methods.<br>
+**Async/Await Support:** Modern Swift concurrency for cleaner, more readable code.<br>
+**Error Handling:** Comprehensive error handling and custom error types.<br>
+**Customizable:** Easily extendable to fit your specific networking needs.<br>
+<br>
 Ideal for developers looking to build scalable and maintainable iOS applications with a robust networking foundation.
 
 
