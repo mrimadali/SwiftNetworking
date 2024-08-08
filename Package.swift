@@ -5,6 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftNetworking",
+    platforms: [
+           .iOS(.v13),       // Minimum iOS 13.0
+           .macOS(.v13),     // Minimum macOS 13.0
+           .watchOS(.v6),    // Minimum watchOS 6.0
+           .tvOS(.v13)       // Minimum tvOS 13.0
+       ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -15,8 +21,8 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SwiftNetworking,
-            path: "Sources/SwiftNetworking"
+            name: "SwiftNetworking",
+            path: "Sources"
         ),
         .testTarget(
             name: "SwiftNetworkingTests",
