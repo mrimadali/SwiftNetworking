@@ -58,9 +58,6 @@ public class NetworkManager: NetworkManagerProtocol {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             print("-----Processing a sucessful response: \(config.method)-------")
-            guard let response = response as? HTTPURLResponse, response.statusCode == 400 else {
-                return .failure(.badRequest)
-            }
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 return .failure(.invalidRequest)
@@ -78,6 +75,9 @@ public class NetworkManager: NetworkManagerProtocol {
                     print("------Decoding error occurred during \(config.urlPath), \(error.localizedDescription.debugDescription)-------")
                     return .failure(.decodingError)
                 }
+            case 400:
+                return .failure(.badRequest)
+                
             case 401:
                 return .failure(.unauthorized)
 
