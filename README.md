@@ -11,6 +11,11 @@ Key Features:
 <br>
 Ideal for developers looking to build scalable and maintainable iOS applications with a robust networking foundation.
 
+**Usage:**
+You can use The Swift Package Manager to install SwiftNetworking by adding: https://github.com/mrimadali/SwiftNetworking
+
+
+
 
 
 
