@@ -10,13 +10,23 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewModel: Self.ViewModel
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ScrollView {
+                if let products = self.viewModel.products {
+                    List {
+                        ForEach(products) { product in
+                            VStack {
+                                Text(product.title ?? "")
+                                    .font(.title)
+                                Text(product.description ?? "")
+                                    .font(.subheadline)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Products")
         }
-        .padding()
         .onAppear {
             viewModel.onAppear()
         }

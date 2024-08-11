@@ -14,7 +14,7 @@ extension ContentView {
         init(productRepository: ProductRepository = ProductRepository.shared) {
             self.productRepository = productRepository
         }
-        var productRoot: [Product]? = nil
+        @Published var products: [Product]? = nil
         func onAppear() {
             Task.detached { [weak self] in
                 await self?.getProductsRequest()
@@ -27,11 +27,11 @@ extension ContentView {
                 let result = await self.productRepository.fetchProducts()
                 switch result {
                 case let .success(products):
-                    self.productRoot = products
+                    self.products = products
                     print("-------getProductsRequest.Success-----")
-                    print(self.productRoot)
+                    print(self.products)
                 case let .failure(error):
-                    print("get Order Congratulation fail: \(error)")
+                    print("getProductsRequest.fail: \(error)")
 
                 }
             }

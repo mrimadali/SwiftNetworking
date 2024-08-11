@@ -62,35 +62,34 @@ public class NetworkManager: NetworkManagerProtocol {
                 return .failure(.badRequest)
             }
             
-            guard let response = response as? HTTPURLResponse else {
+            guard let httpResponse = response as? HTTPURLResponse else {
                 return .failure(.invalidRequest)
             }
             
-            guard response.statusCode == 401 else {
+            switch httpResponse.statusCode {
+            case 200...299:
+                do {
+                    let result = try jsonDecoder.decode(U.self, from: data)
+                    return .success(result)
+                }
+                catch {
+                    print("------Decoding error occurred during \(config.urlPath), \(error.localizedDescription.debugDescription)-------")
+                    return .failure(.decodingError)
+                }
+            case 401:
                 return .failure(.unauthorized)
-            }
-            
-            guard 402...499 ~= response.statusCode else {
-                return .failure(.notFound)
-            }
-            
-            guard 500...599 ~= response.statusCode else {
+
+            case 402...499:
+                return .failure(.unauthorized)
+
+            case 500...599:
                 return .failure(.internalServerError)
-            }
-            
-            guard 200...299 ~= response.statusCode else {
+                
+            default:
                 let message = networkErrorMessage(data)
                 print("failed signing in \(message)")
                 return .failure(.networkError(message))
-            }
-            
-            do {
-                let result = try jsonDecoder.decode(U.self, from: data)
-                return .success(result)
-            }
-            catch {
-                print("------Decoding error occurred during \(config.urlPath), \(error.localizedDescription.debugDescription)-------")
-                return .failure(.decodingError)
+                
             }
         }
         catch {

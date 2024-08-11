@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - ProductRootElement
-struct Product: Codable {
+struct Product: Identifiable, Decodable {
     let id: Int?
     let title: String?
     let price: Double?
@@ -18,7 +18,7 @@ struct Product: Codable {
     let rating: Rating?
 }
 
-enum Category: String, Codable {
+enum Category: String, Decodable {
     case electronics = "electronics"
     case jewelery = "jewelery"
     case menSClothing = "men's clothing"
@@ -26,7 +26,7 @@ enum Category: String, Codable {
 }
 
 // MARK: - Rating
-struct Rating: Codable {
+struct Rating: Decodable {
     let rate: Double?
     let count: Int?
 }
