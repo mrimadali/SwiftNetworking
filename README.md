@@ -19,8 +19,7 @@ You can use The Swift Package Manager to install **SwiftNetworking** to your pac
 https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
 
 
-Usage: 
-
+**Usage: **
 1. Create a file for Endpoint as such **ProductEndpoint**
 2. Create an Enum and Extension conforming to **APIConfiguration**
 3. Create properties for _baseURLString, urlPath, parameters, method, API headers & API body_ as given:
