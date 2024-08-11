@@ -14,6 +14,10 @@ Ideal for developers looking to build scalable and maintainable iOS applications
 **Integration:**
 You can use The Swift Package Manager to install **SwiftNetworking** to your packages: https://github.com/mrimadali/SwiftNetworking
 
+**Output using lib:**
+https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
+
+
 Usage: 
 
 1. Create a file for Endpoint as such **ProductEndpoint**
@@ -126,11 +130,6 @@ Usage:
                 }
             }
          }```
-
-**Output using lib:**
-https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
-
-
 
 
 
