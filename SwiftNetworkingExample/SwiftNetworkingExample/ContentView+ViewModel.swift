@@ -15,8 +15,10 @@ extension ContentView {
             self.productRepository = productRepository
         }
         @Published var products: [Product]? = nil
-        
+        @Published var isLoading: Bool = false
+
         func onAppear() {
+            isLoading  = true
             Task.detached { [weak self] in
                 await self?.getProductsRequest()
             }
@@ -26,6 +28,7 @@ extension ContentView {
             print("------getProductsRequest------")
             Task {
                 let result = await self.productRepository.fetchProducts()
+                self.isLoading = false
                 switch result {
                 case let .success(products):
                     self.products = products
