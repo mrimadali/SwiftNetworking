@@ -88,25 +88,25 @@ https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
 4. Create a repository for a **ProductEndPoint**, let it be **ProductRepository**:
 
    
-```import SwiftNetworking
+   ```import SwiftNetworking
 
-   protocol ProductProtocol {
-    func fetchProducts() async -> Result<ProductRoot, APIError>
-   }
+      protocol ProductProtocol {
+       func fetchProducts() async -> Result<ProductRoot, APIError>
+      }
 
-   class ProductRepository: ProductProtocol {
-    static let shared = ProductRepository()
+      class ProductRepository: ProductProtocol {
+       static let shared = ProductRepository()
     
-    let manager: NetworkManager
+       let manager: NetworkManager
     
-    init(manager: NetworkManager = NetworkManager.shared) {
+       init(manager: NetworkManager = NetworkManager.shared) {
         self.manager = manager
-    }
+       }
     
-    func fetchProducts() async -> Result<ProductRoot, APIError> {
+       func fetchProducts() async -> Result<ProductRoot, APIError> {
         return await manager.execute(ProductEndpoint.getProducts)
-    }
-   }```
+       }
+      }```
 
 5. Then start Repository in your **ViewModel** as:
 
@@ -130,10 +130,3 @@ https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
                 }
             }
          }```
-
-
-
-
-
-
-
