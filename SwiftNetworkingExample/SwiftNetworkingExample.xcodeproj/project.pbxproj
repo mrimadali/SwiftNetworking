@@ -11,7 +11,9 @@
 		C49911582C64E6BF0026A6B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49911572C64E6BF0026A6B7 /* ContentView.swift */; };
 		C499115A2C64E6C10026A6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49911592C64E6C10026A6B7 /* Assets.xcassets */; };
 		C499115D2C64E6C10026A6B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C499115C2C64E6C10026A6B7 /* Preview Assets.xcassets */; };
-		C4B7EFE72C688AFB00BDFCF6 /* FakeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFE62C688AFB00BDFCF6 /* FakeEndpoint.swift */; };
+		C4B7EFE72C688AFB00BDFCF6 /* ProductEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFE62C688AFB00BDFCF6 /* ProductEndpoint.swift */; };
+		C4B7EFE92C688D8700BDFCF6 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFE82C688D8700BDFCF6 /* ProductRepository.swift */; };
+		C4B7EFEB2C688E1100BDFCF6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFEA2C688E1100BDFCF6 /* Product.swift */; };
 		C4E802B92C6797B00067BFD4 /* SwiftNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = C4E802B82C6797B00067BFD4 /* SwiftNetworking */; };
 /* End PBXBuildFile section */
 
@@ -21,7 +23,9 @@
 		C49911572C64E6BF0026A6B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C49911592C64E6C10026A6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C499115C2C64E6C10026A6B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C4B7EFE62C688AFB00BDFCF6 /* FakeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEndpoint.swift; sourceTree = "<group>"; };
+		C4B7EFE62C688AFB00BDFCF6 /* ProductEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEndpoint.swift; sourceTree = "<group>"; };
+		C4B7EFE82C688D8700BDFCF6 /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
+		C4B7EFEA2C688E1100BDFCF6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		C4B7EFE22C688A6E00BDFCF6 /* Encodables */ = {
 			isa = PBXGroup;
 			children = (
+				C4B7EFEA2C688E1100BDFCF6 /* Product.swift */,
 			);
 			path = Encodables;
 			sourceTree = "<group>";
@@ -100,7 +105,7 @@
 		C4B7EFE42C688A7C00BDFCF6 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				C4B7EFE62C688AFB00BDFCF6 /* FakeEndpoint.swift */,
+				C4B7EFE62C688AFB00BDFCF6 /* ProductEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 		C4B7EFE52C688A8300BDFCF6 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				C4B7EFE82C688D8700BDFCF6 /* ProductRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -189,8 +195,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C49911582C64E6BF0026A6B7 /* ContentView.swift in Sources */,
-				C4B7EFE72C688AFB00BDFCF6 /* FakeEndpoint.swift in Sources */,
+				C4B7EFE72C688AFB00BDFCF6 /* ProductEndpoint.swift in Sources */,
+				C4B7EFEB2C688E1100BDFCF6 /* Product.swift in Sources */,
 				C49911562C64E6BF0026A6B7 /* SwiftNetworkingExampleApp.swift in Sources */,
+				C4B7EFE92C688D8700BDFCF6 /* ProductRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

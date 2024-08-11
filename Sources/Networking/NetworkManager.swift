@@ -34,7 +34,7 @@ protocol NetworkManagerProtocol {
 
 public class NetworkManager: NetworkManagerProtocol {
     
-    static let shared = NetworkManager()
+    public static let shared = NetworkManager()
     
     func execute<U: Decodable>(_ config: any APIConfiguration) async -> Result<U, APIError> {
         return await self.execute(config, JSONDecoder())
