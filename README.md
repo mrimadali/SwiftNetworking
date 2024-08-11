@@ -16,9 +16,9 @@ You can use The Swift Package Manager to install **SwiftNetworking** to your pac
 
 Usage: 
 
-1. Create a file for Endpoint as such ProductEndpoint
-2. Create an Enum and Extension conforming to APIConfiguration
-3. Create properties for baseURLString, urlPath, parameters, method, API headers & API body as given:
+1. Create a file for Endpoint as such **ProductEndpoint**
+2. Create an Enum and Extension conforming to **APIConfiguration**
+3. Create properties for _baseURLString, urlPath, parameters, method, API headers & API body_ as given:
 
    ```import SwiftNetworking
 
@@ -81,7 +81,7 @@ Usage:
     }
    }```
 
-4. Create a repository for a ProductEndPoint, let it be ProductRepository like:
+4. Create a repository for a **ProductEndPoint**, let it be **ProductRepository**:
 
    
 ```import SwiftNetworking
@@ -104,7 +104,7 @@ Usage:
     }
    }```
 
-5. Then start Repository in your ViewModel as:
+5. Then start Repository in your **ViewModel** as:
 
         ```let productRepository: ProductRepository
         init(productRepository: ProductRepository = ProductRepository.shared) {
@@ -128,11 +128,8 @@ Usage:
         }```
 
 
+
 **Output using lib:**
-
-
-
-
 https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
 
 
