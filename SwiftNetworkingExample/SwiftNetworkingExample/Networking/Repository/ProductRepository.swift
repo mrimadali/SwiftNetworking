@@ -10,7 +10,6 @@ import SwiftNetworking
 
 protocol ProductProtocol {
     func fetchProducts() async -> Result<ProductRoot, APIError>
-    
 }
 
 class ProductRepository: ProductProtocol {

@@ -80,7 +80,7 @@ public class NetworkManager: NetworkManagerProtocol {
                 return .failure(.unauthorized)
 
             case 402...499:
-                return .failure(.unauthorized)
+                return .failure(.notFound)
 
             case 500...599:
                 return .failure(.internalServerError)
