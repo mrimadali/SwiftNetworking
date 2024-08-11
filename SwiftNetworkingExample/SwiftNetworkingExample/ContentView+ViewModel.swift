@@ -15,6 +15,7 @@ extension ContentView {
             self.productRepository = productRepository
         }
         @Published var products: [Product]? = nil
+        
         func onAppear() {
             Task.detached { [weak self] in
                 await self?.getProductsRequest()

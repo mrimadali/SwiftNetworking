@@ -11,15 +11,17 @@ struct ContentView: View {
     @StateObject var viewModel: Self.ViewModel
     var body: some View {
         NavigationStack {
-            ScrollView {
+            VStack(alignment: .leading) {
                 if let products = self.viewModel.products {
                     List {
                         ForEach(products) { product in
                             VStack {
                                 Text(product.title ?? "")
                                     .font(.title)
+                                    .lineLimit(1)
                                 Text(product.description ?? "")
                                     .font(.subheadline)
+                                    .lineLimit(2)
                             }
                         }
                     }
