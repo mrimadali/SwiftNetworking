@@ -22,12 +22,12 @@ Usage:
 
    ```import SwiftNetworking
 
-enum ProductEndpoint {
-    case getProducts
-}
+      enum ProductEndpoint {
+       case getProducts
+      }
 
 
-extension ProductEndpoint: APIConfiguration {
+   extension ProductEndpoint: APIConfiguration {
     var baseURLString: String {
         return "https://fakestoreapi.com"
     }
@@ -86,11 +86,11 @@ extension ProductEndpoint: APIConfiguration {
    
 ```import SwiftNetworking
 
-protocol ProductProtocol {
+   protocol ProductProtocol {
     func fetchProducts() async -> Result<ProductRoot, APIError>
-}
+   }
 
-class ProductRepository: ProductProtocol {
+   class ProductRepository: ProductProtocol {
     static let shared = ProductRepository()
     
     let manager: NetworkManager
@@ -102,7 +102,7 @@ class ProductRepository: ProductProtocol {
     func fetchProducts() async -> Result<ProductRoot, APIError> {
         return await manager.execute(ProductEndpoint.getProducts)
     }
-}```
+   }```
 
 5. Then start Repository in your ViewModel as:
 
