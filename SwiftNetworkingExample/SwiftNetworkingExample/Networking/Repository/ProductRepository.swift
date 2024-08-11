@@ -10,20 +10,20 @@ import SwiftNetworking
 
 protocol ProductProtocol {
     func fetchProducts() async -> Result<ProductRoot, APIError>
-
+    
 }
 
 class ProductRepository: ProductProtocol {
+    static let shared = ProductRepository()
+    
+    let manager: NetworkManager
+    
+    init(manager: NetworkManager = NetworkManager.shared) {
+        self.manager = manager
+    }
+    
     func fetchProducts() async -> Result<ProductRoot, APIError> {
-        static let shared = AuthRepository()
-        
-        let service: NetworkManager
-        
-        init(
-            service: NetworkManager = NetworkManager.shared,
-        ) {
-            self.service = service
-        }
-
+        return await manager.execute(ProductEndpoint.getProducts)
     }
 }
+

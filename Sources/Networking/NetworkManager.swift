@@ -36,11 +36,11 @@ public class NetworkManager: NetworkManagerProtocol {
     
     public static let shared = NetworkManager()
     
-    func execute<U: Decodable>(_ config: any APIConfiguration) async -> Result<U, APIError> {
+    public func execute<U: Decodable>(_ config: any APIConfiguration) async -> Result<U, APIError> {
         return await self.execute(config, JSONDecoder())
     }
     
-    func execute<U: Decodable>(_ config: any APIConfiguration, _ jsonDecoder: JSONDecoder) async -> Result<U, APIError> {
+    public func execute<U: Decodable>(_ config: any APIConfiguration, _ jsonDecoder: JSONDecoder) async -> Result<U, APIError> {
         print("-----Processing a request:\(config.method)-------")
         guard let url = URL(string: config.urlPath),
               var request = getRequest(config, url: url) else {
@@ -78,7 +78,7 @@ public class NetworkManager: NetworkManagerProtocol {
         
     }
     
-    func execute(_ config: any APIConfiguration) async -> APIError? {
+    public func execute(_ config: any APIConfiguration) async -> APIError? {
         guard let url = URL(string: config.urlPath),
               var request = getRequest(config, url: url) else {
             
