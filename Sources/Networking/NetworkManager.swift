@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias NetworkResponse = (data: Data, response: URLResponse)
+public typealias NetworkResponse = (data: Data, response: URLResponse)
 
-protocol NetworkManagerProtocol {
+public protocol NetworkManagerProtocol {
     
     /// Execute with the default json decoder.
     func execute<U: Decodable>(_ config: any APIConfiguration) async -> Result<U, APIError>
@@ -49,6 +49,7 @@ public class NetworkManager: NetworkManagerProtocol {
             return .failure(APIError.invalidURL)
             
         }
+        print("-------Request URL: \(url)-------")
         if config.isAuthenticated, let token = config.headers?["Authorization"] {
             print("------Authenticating using bearer token------")
             request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token)"
@@ -64,7 +65,7 @@ public class NetworkManager: NetworkManagerProtocol {
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.invalidRequest)
             }
-           
+            
             guard response.statusCode == 401 else {
                 return .failure(.unauthorized)
             }
@@ -76,8 +77,7 @@ public class NetworkManager: NetworkManagerProtocol {
             guard 500...599 ~= response.statusCode else {
                 return .failure(.internalServerError)
             }
-
-
+            
             guard 200...299 ~= response.statusCode else {
                 let message = networkErrorMessage(data)
                 print("failed signing in \(message)")
@@ -106,7 +106,7 @@ public class NetworkManager: NetworkManagerProtocol {
             print("-----URL conversion from string failed for \(config.urlPath)------")
             return .invalidURL
         }
-        
+        print("-------Request URL: \(url)-------")
         if config.isAuthenticated, let token = config.headers?["Authorization"] {
             print("------Authenticating using bearer token------")
             request.allHTTPHeaderFields?["Authorization"] = "Bearer \(token)"
@@ -129,7 +129,7 @@ public class NetworkManager: NetworkManagerProtocol {
         
     }
     
-    func processRequest(_ config: any APIConfiguration) async throws -> NetworkResponse {
+    public func processRequest(_ config: any APIConfiguration) async throws -> NetworkResponse {
         guard let url = URL(string: config.urlPath),
               var request = getRequest(config, url: url) else {
             print("------URL conversion from string failed for \(config.urlPath)------")
@@ -147,7 +147,7 @@ public class NetworkManager: NetworkManagerProtocol {
             .data(for: request)
     }
     
-    func networkErrorMessage(_ data: Data) -> String {
+    public func networkErrorMessage(_ data: Data) -> String {
         do {
             let error = try JSONDecoder().decode(
                 NetworkError.self,
@@ -166,7 +166,7 @@ public class NetworkManager: NetworkManagerProtocol {
     
     // MARK: Private
     
-    private func getRequest<Y: APIConfiguration>(_ config: Y, url: URL) -> URLRequest? {
+    public func getRequest<Y: APIConfiguration>(_ config: Y, url: URL) -> URLRequest? {
         var urlComponents = URLComponents(
             url: url,
             resolvingAgainstBaseURL: false
