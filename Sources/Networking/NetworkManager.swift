@@ -57,7 +57,28 @@ public class NetworkManager: NetworkManagerProtocol {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             print("-----Processing a sucessful response: \(config.method)-------")
-            guard let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode else {
+            guard let response = response as? HTTPURLResponse, response.statusCode == 400 else {
+                return .failure(.badRequest)
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                return .failure(.invalidRequest)
+            }
+           
+            guard response.statusCode == 401 else {
+                return .failure(.unauthorized)
+            }
+            
+            guard 402...499 ~= response.statusCode else {
+                return .failure(.notFound)
+            }
+            
+            guard 500...599 ~= response.statusCode else {
+                return .failure(.internalServerError)
+            }
+
+
+            guard 200...299 ~= response.statusCode else {
                 let message = networkErrorMessage(data)
                 print("failed signing in \(message)")
                 return .failure(.networkError(message))

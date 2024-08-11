@@ -15,7 +15,7 @@ enum ProductEndpoint {
 
 extension ProductEndpoint: APIConfiguration {
     var baseURLString: String {
-        return "https://fakestoreapi.com/"
+        return "https://fakestoreapi.com"
     }
 
     var urlPath: String {

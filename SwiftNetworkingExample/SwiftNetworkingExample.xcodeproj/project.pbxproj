@@ -14,6 +14,7 @@
 		C4B7EFE72C688AFB00BDFCF6 /* ProductEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFE62C688AFB00BDFCF6 /* ProductEndpoint.swift */; };
 		C4B7EFE92C688D8700BDFCF6 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFE82C688D8700BDFCF6 /* ProductRepository.swift */; };
 		C4B7EFEB2C688E1100BDFCF6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFEA2C688E1100BDFCF6 /* Product.swift */; };
+		C4B7EFED2C688FF700BDFCF6 /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFEC2C688FF700BDFCF6 /* ContentView+ViewModel.swift */; };
 		C4E802B92C6797B00067BFD4 /* SwiftNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = C4E802B82C6797B00067BFD4 /* SwiftNetworking */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		C4B7EFE62C688AFB00BDFCF6 /* ProductEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEndpoint.swift; sourceTree = "<group>"; };
 		C4B7EFE82C688D8700BDFCF6 /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		C4B7EFEA2C688E1100BDFCF6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C4B7EFEC2C688FF700BDFCF6 /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				C4B7EFE12C688A6100BDFCF6 /* Networking */,
 				C49911552C64E6BF0026A6B7 /* SwiftNetworkingExampleApp.swift */,
 				C49911572C64E6BF0026A6B7 /* ContentView.swift */,
+				C4B7EFEC2C688FF700BDFCF6 /* ContentView+ViewModel.swift */,
 				C49911592C64E6C10026A6B7 /* Assets.xcassets */,
 				C499115B2C64E6C10026A6B7 /* Preview Content */,
 			);
@@ -199,6 +202,7 @@
 				C4B7EFEB2C688E1100BDFCF6 /* Product.swift in Sources */,
 				C49911562C64E6BF0026A6B7 /* SwiftNetworkingExampleApp.swift in Sources */,
 				C4B7EFE92C688D8700BDFCF6 /* ProductRepository.swift in Sources */,
+				C4B7EFED2C688FF700BDFCF6 /* ContentView+ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
