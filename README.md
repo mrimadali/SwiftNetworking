@@ -83,7 +83,7 @@ https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
             return nil
         }
     }
-   }```
+   }
 
 4. Create a repository for a **ProductEndPoint**, let it be **ProductRepository**:
 
@@ -129,4 +129,4 @@ https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
 
                 }
             }
-         }```
+         }
