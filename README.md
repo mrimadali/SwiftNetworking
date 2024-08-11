@@ -110,7 +110,7 @@ https://github.com/user-attachments/assets/0b2ec0c8-2dcc-43db-8625-aa722462b5bd
 
 5. Then start Repository in your **ViewModel** as:
 
-        ```let productRepository: ProductRepository
+        let productRepository: ProductRepository
         init(productRepository: ProductRepository = ProductRepository.shared) {
             self.productRepository = productRepository
         }
