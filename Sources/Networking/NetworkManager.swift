@@ -69,6 +69,8 @@ public class NetworkManager: NetworkManagerProtocol {
             switch httpResponse.statusCode {
             case 200...299:
                 do {
+                    print("--------Successful Response---------")
+                    print(String(data: data, encoding: .utf8))
                     let result = try jsonDecoder.decode(U.self, from: data)
                     return .success(result)
                 }
