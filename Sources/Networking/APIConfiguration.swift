@@ -8,7 +8,7 @@
 import Foundation
 
 // Template to construct API endpoints
-protocol APIConfiguration {
+public protocol APIConfiguration {
     var urlPath: String { get }
     var parameters: [URLQueryItem] { get }
     var method: APIMethod { get }
@@ -16,7 +16,7 @@ protocol APIConfiguration {
     var body: Encodable?{ get }
 }
 
-extension APIConfiguration {
+public extension APIConfiguration {
     var isAuthenticated: Bool {
         if let accessToken = headers?["Authorization"], accessToken.count > 0 {
             return true
@@ -25,7 +25,7 @@ extension APIConfiguration {
     }
 }
 
-enum APIMethod {
+public enum APIMethod {
     case get, post, patch, put, delete
     
     var description: String {

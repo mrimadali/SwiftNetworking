@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NetworkError: Decodable, Error {
+public struct NetworkError: Decodable, Error {
     let message: String
     let statusCode: Int?
 

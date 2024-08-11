@@ -11,6 +11,8 @@
 		C49911582C64E6BF0026A6B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49911572C64E6BF0026A6B7 /* ContentView.swift */; };
 		C499115A2C64E6C10026A6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49911592C64E6C10026A6B7 /* Assets.xcassets */; };
 		C499115D2C64E6C10026A6B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C499115C2C64E6C10026A6B7 /* Preview Assets.xcassets */; };
+		C4B7EFE72C688AFB00BDFCF6 /* FakeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7EFE62C688AFB00BDFCF6 /* FakeEndpoint.swift */; };
+		C4E802B92C6797B00067BFD4 /* SwiftNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = C4E802B82C6797B00067BFD4 /* SwiftNetworking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		C49911572C64E6BF0026A6B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C49911592C64E6C10026A6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C499115C2C64E6C10026A6B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C4B7EFE62C688AFB00BDFCF6 /* FakeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E802B92C6797B00067BFD4 /* SwiftNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +55,7 @@
 		C49911542C64E6BF0026A6B7 /* SwiftNetworkingExample */ = {
 			isa = PBXGroup;
 			children = (
+				C4B7EFE12C688A6100BDFCF6 /* Networking */,
 				C49911552C64E6BF0026A6B7 /* SwiftNetworkingExampleApp.swift */,
 				C49911572C64E6BF0026A6B7 /* ContentView.swift */,
 				C49911592C64E6C10026A6B7 /* Assets.xcassets */,
@@ -65,6 +70,46 @@
 				C499115C2C64E6C10026A6B7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C4B7EFE12C688A6100BDFCF6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C4B7EFE52C688A8300BDFCF6 /* Repository */,
+				C4B7EFE42C688A7C00BDFCF6 /* Endpoints */,
+				C4B7EFE32C688A7600BDFCF6 /* Decodables */,
+				C4B7EFE22C688A6E00BDFCF6 /* Encodables */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C4B7EFE22C688A6E00BDFCF6 /* Encodables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Encodables;
+			sourceTree = "<group>";
+		};
+		C4B7EFE32C688A7600BDFCF6 /* Decodables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Decodables;
+			sourceTree = "<group>";
+		};
+		C4B7EFE42C688A7C00BDFCF6 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				C4B7EFE62C688AFB00BDFCF6 /* FakeEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		C4B7EFE52C688A8300BDFCF6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +128,9 @@
 			dependencies = (
 			);
 			name = SwiftNetworkingExample;
+			packageProductDependencies = (
+				C4E802B82C6797B00067BFD4 /* SwiftNetworking */,
+			);
 			productName = SwiftNetworkingExample;
 			productReference = C49911522C64E6BF0026A6B7 /* SwiftNetworkingExample.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +160,7 @@
 			);
 			mainGroup = C49911492C64E6BF0026A6B7;
 			packageReferences = (
+				C4E802B72C6797B00067BFD4 /* XCRemoteSwiftPackageReference "SwiftNetworking" */,
 			);
 			productRefGroup = C49911532C64E6BF0026A6B7 /* Products */;
 			projectDirPath = "";
@@ -140,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C49911582C64E6BF0026A6B7 /* ContentView.swift in Sources */,
+				C4B7EFE72C688AFB00BDFCF6 /* FakeEndpoint.swift in Sources */,
 				C49911562C64E6BF0026A6B7 /* SwiftNetworkingExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +396,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4E802B72C6797B00067BFD4 /* XCRemoteSwiftPackageReference "SwiftNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mrimadali/SwiftNetworking";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4E802B82C6797B00067BFD4 /* SwiftNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4E802B72C6797B00067BFD4 /* XCRemoteSwiftPackageReference "SwiftNetworking" */;
+			productName = SwiftNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C499114A2C64E6BF0026A6B7 /* Project object */;
 }

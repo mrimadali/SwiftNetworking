@@ -32,7 +32,7 @@ protocol NetworkManagerProtocol {
     
 }
 
-class NetworkManager: NetworkManagerProtocol {
+public class NetworkManager: NetworkManagerProtocol {
     
     static let shared = NetworkManager()
     
