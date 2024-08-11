@@ -79,7 +79,7 @@ Usage:
             return nil
         }
     }
-}```
+   }```
 
 4. Create a repository for a ProductEndPoint, let it be ProductRepository like:
 
