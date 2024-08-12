@@ -65,7 +65,5 @@ extension ProductEndpoint: APIConfiguration {
             return nil
         }
     }
-
-    
     
 }
